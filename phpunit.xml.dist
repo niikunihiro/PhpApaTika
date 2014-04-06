@@ -27,7 +27,7 @@
 		<whitelist>
 			<directory suffix=".php">PhpApaTika</directory>
 			<exclude>
-				<file>PhpApaTika/PhpApaTika/usage.php</file>
+				<file>PhpApaTika/usage.php</file>
 			</exclude>
 		</whitelist>
 		<blacklist>
