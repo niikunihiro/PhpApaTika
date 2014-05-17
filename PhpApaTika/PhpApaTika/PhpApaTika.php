@@ -51,9 +51,36 @@ class PhpApaTika
     /**
      * @return string
      */
+    public function getTextMain()
+    {
+        $this->builder->setOutputType('--text-main');
+        return $this->execute();
+    }
+
+    /**
+     * @return string
+     */
     public function getJson()
     {
         $this->builder->setOutputType('--json');
+        return $this->execute();
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetadata()
+    {
+        $this->builder->setOutputType('--metadata');
+        return $this->execute();
+    }
+
+    /**
+     * @return string
+     */
+    public function getXml()
+    {
+        $this->builder->setOutputType('--xml');
         return $this->execute();
     }
 

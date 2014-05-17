@@ -57,6 +57,26 @@ class PhpApaTikaTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    function getMetadata()
+    {
+        $metadata = $this->PhpApaTika->from($this->target)->getMetadata();
+        $this->assertTrue(strpos($metadata, 'text/plain') !== false);
+    }
+
+    /**
+     * @test
+     */
+    function getXml()
+    {
+        $expected = 'Apache Tika - a content analysis toolkit';
+        $xml = $this->PhpApaTika->from($this->target)->getXml();
+        $simple_xml = new \SimpleXMLElement($xml);
+        $this->assertEquals($expected, $simple_xml->body[0]->p);
+    }
+
+    /**
+     * @test
+     */
     function allThrough()
     {
         $expected = 'Apache Tika - a content analysis toolkit';
